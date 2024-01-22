@@ -1,3 +1,5 @@
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
 module.exports = {
@@ -7,8 +9,14 @@ module.exports = {
     sub:"./src/strange.js"
    },
    output:{
-    filename:"[name].bundle.js",
+    filename:"[name].[contenthash].js",
     path:path.join(__dirname,"dist")
  
-}
+},
+plugins:[
+    
+        new HtmlWebpackPlugin(),
+    new CleanWebpackPlugin(), //
+    
+]
 }
