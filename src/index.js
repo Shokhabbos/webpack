@@ -1,7 +1,5 @@
-import { wait } from "./sub";
-const logAfterTwoSeconds = (a, b) => {
-  wait(2000);
-  return a + b;
-};
+import "./assets/styles/style.css";
+import BgImg from "./assets/images/mountain.jpg";
 
-console.log(logAfterTwoSeconds(2, 5));
+const body = document.querySelector("body");
+body.style.backgroundImage = `url(${BgImg})`;

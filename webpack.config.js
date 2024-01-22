@@ -25,4 +25,20 @@ module.exports = {
     }),
     new CleanWebpackPlugin(), //
   ],
+  module: {
+    rules: [
+      {
+        test: /\.css/,
+        use: ["style-loader", "css-loader"],
+      },
+      {
+        test: /\.(png|jpg|jpeg|svg|gif)/,
+        use: ["file-loader"],
+      },
+      {
+        test: /\.(woff|woff2|ttf|otf)/,
+        use: ["file-loader"],
+      },
+    ],
+  },
 };
