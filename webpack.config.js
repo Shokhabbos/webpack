@@ -4,13 +4,21 @@ const path = require("path");
 
 module.exports = {
   mode: "development",
+  context: path.resolve(__dirname, "src"),
   entry: {
-    main: "./src/index.js",
-    sub: "./src/strange.js",
+    main: "./index.js",
+    sub: "./strange.js",
   },
   output: {
     filename: "[name].[contenthash].js",
     path: path.join(__dirname, "dist"),
+  },
+  resolve: {
+    extensions: [".js", ".json"],
+    alias: {
+      "@assets": "./assets",
+      "@": "./",
+    },
   },
   devServer: {
     port: 2323,
@@ -21,7 +29,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       title: "Hello World in Webpack",
       inject: "body",
-      template: "./src/index.html",
+      template: "./index.html",
     }),
     new CleanWebpackPlugin(), //
   ],
