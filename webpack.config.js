@@ -12,6 +12,11 @@ module.exports = {
     filename: "[name].[contenthash].js",
     path: path.join(__dirname, "dist"),
   },
+  devServer: {
+    port: 2323,
+    host: "0.0.0.0",
+    allowedHosts: "all",
+  },
   plugins: [
     new HtmlWebpackPlugin({
       title: "Hello World in Webpack",
