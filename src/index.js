@@ -1,8 +1,7 @@
 import { wait } from "./sub";
-const logAfterTwoSeconds = (a, b)=>{
-    wait(2000)
-    return a + b;
-}
+const logAfterTwoSeconds = (a, b) => {
+  wait(2000);
+  return a + b;
+};
 
-console.log(logAfterTwoSeconds(2,5));
-console.log(substract(6,1));
+console.log(logAfterTwoSeconds(2, 5));
